@@ -1,0 +1,27 @@
+{
+  "name": "sassy-project",
+  "version": "1.0.0",
+  "scripts": {
+    "server": "live-server",
+    "sass-watch": "node-sass source/scss/style.scss --watch --output=compiled/css --output-style=compressed --source-map=true",
+    "dev": "run-p server sass-watch",
+    "lint-html": "htmlhint *.{htm,html}",
+    "lint-stylelint": "stylelint *.css",
+    "lint-js": "standard --fix",
+    "build:lint": "run-s lint-html lint-stylelint lint-js",
+    "build:sass": "node-sass source/scss/styles.scss --output=compiled/css --output-style=compressed --source-map=true",
+    "build": "run-p build:sass",
+    "deploy:surge": "surge --project . --domain https://mart1527-kg-tgc7noax99ajvzzg.surge.sh/",
+    "deploy": "run-s build:* deploy:surge"
+  },
+  "devDependencies": {
+    "htmlhint": "^0.9.13",
+    "live-server": "^1.2.0",
+    "node-sass": "^4.5.2",
+    "npm-run-all": "^4.0.2",
+    "standard": "^10.0.2",
+    "stylelint": "^7.10.1",
+    "stylelint-config-standard": "^16.0.0",
+    "surge": "^0.19.0"
+  }
+}

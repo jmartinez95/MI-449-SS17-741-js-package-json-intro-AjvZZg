@@ -1,0 +1,8 @@
+node_modules/
+compiled/
+
+*.log*
+*.DS_Store
+.gitignore
+package.json
+yarn.lock

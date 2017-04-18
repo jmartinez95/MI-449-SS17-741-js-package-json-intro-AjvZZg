@@ -10,7 +10,7 @@
     "lint-js": "standard --fix",
     "build:lint": "run-s lint-html lint-stylelint lint-js",
     "build:sass": "node-sass source/scss/styles.scss --output=compiled/css --output-style=compressed --source-map=true",
-    "build": "run-p build:sass",
+    "build": "run-p build:lint build:sass",
     "deploy:surge": "surge --project . --domain https://mart1527-kg-tgc7noax99ajvzzg.surge.sh/",
     "deploy": "run-s build:* deploy:surge"
   },

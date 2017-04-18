@@ -3,3 +3,5 @@ source/
 
 *.log*
 *.DS_Store
+.gitignore
+.surgeignore
